@@ -1,0 +1,238 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('img/nature.png');
+    background-size: cover;
+    color: #333;
+    text-align: center;
+}
+
+/* Header Section */
+header {
+    background:
+    linear-gradient(
+      180deg,
+      #0d7ac4 0%,
+      #065085 100%
+    );
+    color: white;
+    padding: 40px 0;
+}
+
+header .logo {
+    width: 75px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+header .divider {
+    width: 60%;
+    height: 2px;
+    background-color: #15b8fc;
+    margin: 20px auto;
+    border: none;
+}
+
+header p {
+    font-size: 1.1em;
+    margin: 20px auto 0;
+    padding: 10px 30px;
+    max-width: 450px;
+    line-height: 1.5;
+}
+
+/* Container for spacing */
+.container {
+    margin: 0 auto;
+    max-width: 875px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.466);
+}
+
+/* Adjusting section and paragraph to use container */
+section {
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+p {
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 1200px;
+}
+
+/* Timeline Section */
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #f8f8f8;
+    padding: 40px 0;
+    gap: 20px;
+    padding: 30px;
+}
+
+.timeline .card {
+    background-color: white;
+    flex: 0 1 calc((100% - 40px) / 3);
+    margin: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.178);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline .card h2 {
+    font-size: 1.5em;
+    color: #005a99;
+    margin: 0;
+}
+
+.timeline .card h3 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+.timeline .card img {
+    width: 100%;
+    height: auto;
+    background-color: #d3d3d3;
+    margin: 10px 0;
+}
+
+.timeline .card p {
+    font-size: 0.85em;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #055593d5;
+    color: white;
+    padding: 10px 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.timeline .card:hover p {
+    opacity: 1;
+}
+
+/* Footer Section */
+footer {
+    background:
+    linear-gradient(
+      180deg,
+      #0d7ac4 0%,
+      #065085 100%
+    );
+    color: white;
+    font-size: 0.9em;
+    position: sticky;
+    bottom: 0;
+}
+
+/* =====================
+   TABLET (max-width: 1024px)
+   ===================== */
+@media (max-width: 1024px) {
+ 
+    header h1 {
+        font-size: 2.5em;
+    }
+ 
+    header p {
+        font-size: 1.1em;
+    }
+ 
+    /* 2 cards per row on tablets */
+    .timeline .card {
+        flex: 0 1 calc((100% - 20px) / 2);
+    }
+}
+ 
+/* =====================
+   MOBILE (max-width: 600px)
+   ===================== */
+@media (max-width: 600px) {
+    header {
+        padding: 30px 16px;
+    }
+ 
+    header h1 {
+        font-size: 2.2em;
+    }
+ 
+    header p {
+        font-size: 0.9em;
+        padding: 0 25px;
+    }
+ 
+    header .divider {
+        width: 90%;
+    }
+ 
+    section {
+        padding: 16px 0;
+    }
+ 
+    p {
+        padding: 12px 0;
+    }
+ 
+    .timeline {
+        padding: 20px 12px;
+        gap: 16px;
+    }
+ 
+    /* 1 card per row on phones */
+    .timeline .card {
+        flex: 0 1 100%;
+    }
+ 
+    .timeline .card h2 {
+        font-size: 1.4em;
+    }
+ 
+    .timeline .card h3 {
+        font-size: 1em;
+    }
+ 
+    /* On touch devices, show the overlay text permanently
+       since hover doesn't work reliably on mobile */
+    .timeline .card:active p {
+        opacity: 1;
+    }
+ 
+    footer {
+        font-size: 0.8em;
+        padding: 10px 16px;
+    }
+}
